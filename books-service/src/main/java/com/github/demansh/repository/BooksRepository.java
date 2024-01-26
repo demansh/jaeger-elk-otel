@@ -6,6 +6,8 @@ import org.springframework.stereotype.Component;
 import java.util.Collection;
 import java.util.Map;
 
+import static com.github.demansh.repository.Sleeper.sleep;
+
 @Component
 public class BooksRepository {
 
@@ -18,10 +20,12 @@ public class BooksRepository {
     );
 
     public Book getBook(long id) {
+        sleep(100);
         return books.get(id);
     }
 
     public Collection<Book> getAll() {
+        sleep(100);
         return books.values();
     }
 }

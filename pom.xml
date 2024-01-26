@@ -16,6 +16,5 @@
 	<modules>
 		<module>api-service</module>
 		<module>books-service</module>
-		<module>load</module>
 	</modules>
 </project>

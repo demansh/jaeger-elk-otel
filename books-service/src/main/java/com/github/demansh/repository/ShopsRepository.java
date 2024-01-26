@@ -9,6 +9,8 @@ import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+import static com.github.demansh.repository.Sleeper.sleep;
+
 @Component
 public class ShopsRepository {
     private final Map<Long, Shop> shops = Map.of(
@@ -22,6 +24,7 @@ public class ShopsRepository {
             1003L, Set.of(100003L, 100004L, 100005L)
     );
     public Collection<Shop> findShopsForBook(long bookId) {
+        sleep(100);
         return stock.entrySet().stream()
                 .filter(entry -> entry.getValue()
                 .contains(bookId))
