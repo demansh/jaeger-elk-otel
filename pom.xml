@@ -15,6 +15,6 @@
 
 	<modules>
 		<module>api-service</module>
-		<module>customers-service</module>
+		<module>books-service</module>
 	</modules>
 </project>

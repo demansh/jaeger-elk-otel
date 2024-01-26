@@ -1,0 +1,7 @@
+server.port: 8080
+
+shopsClient:
+  baseUrl: http://books-service:8081
+
+booksClient:
+  baseUrl: http://books-service:8081

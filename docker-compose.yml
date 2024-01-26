@@ -8,8 +8,8 @@ services:
     ports:
       - "8080:8080"
 
-  customers-service:
-    build: ./customer-service/
-    image: customer-service:latest
+  books-service:
+    build: ./books-service/
+    image: books-service:latest
     ports:
       - "8081"

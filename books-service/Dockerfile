@@ -1,4 +1,4 @@
-FROM eclipse-temurin:17-jdk-alpine
+FROM openjdk:17-jdk-slim-buster
 ARG JAR_FILE=target/*.jar
 COPY ${JAR_FILE} application.jar
 EXPOSE 8081
