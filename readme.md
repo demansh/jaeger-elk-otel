@@ -4,5 +4,5 @@
 Execute in the root directory:
 ```
 ./mvnw clean package
-docker-compose up
+docker-compose up --build
 ```

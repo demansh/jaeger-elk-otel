@@ -1,12 +1,12 @@
 package com.github.demansh.services;
 
 import com.github.demansh.entities.Book;
-import com.github.demansh.entities.BookAggregate;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.Collection;
+import java.util.List;
 import java.util.Objects;
 
 @Component
@@ -29,9 +29,6 @@ public class BooksService {
 
     public Collection<Book> getAllBooks() {
         String url = String.format("%s/books", baseUrl);
-        return Objects.requireNonNull(restTemplate.getForObject(url, Books.class)).books;
-    }
-
-    private record Books(Collection<Book> books) {
+        return List.of(Objects.requireNonNull(restTemplate.getForObject(url, Book[].class)));
     }
 }
