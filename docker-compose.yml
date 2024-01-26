@@ -1,0 +1,15 @@
+version: "3.5"
+
+services:
+
+  api-service:
+    build: api-service/
+    image: api-service:latest
+    ports:
+      - "8080:8080"
+
+  customers-service:
+    build: ./customer-service/
+    image: customer-service:latest
+    ports:
+      - "8081"
