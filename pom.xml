@@ -13,6 +13,13 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
+	<properties>
+		<maven.compiler.source>17</maven.compiler.source>
+		<maven.compiler.target>17</maven.compiler.target>
+		<!-- verbose is useful for debugging purposes -->
+		<maven.compiler.verbose>true</maven.compiler.verbose>
+	</properties>
+
 	<modules>
 		<module>api-service</module>
 		<module>books-service</module>
