@@ -25,11 +25,8 @@ public class LoadTest {
     }
 
     private String sendRequest(long id) {
-        long start = System.currentTimeMillis();
         String url = id == -1 ? "http://localhost:8080/books" : String.format("http://localhost:8080/books/%d", id);
-        String result = template.exchange(url, HttpMethod.GET, null, String.class).getBody();
-        System.out.println(System.currentTimeMillis() - start);
-        return result;
+        return template.exchange(url, HttpMethod.GET, null, String.class).getBody();
     }
 
     private List<Long> prepareIds() throws IOException {
