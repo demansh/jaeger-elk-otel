@@ -3,6 +3,6 @@
 ## Build and Run
 Execute in the root directory:
 ```
-./mvnw clean package
+./mvnw clean package -DskipTests=true
 docker-compose up --build
 ```
