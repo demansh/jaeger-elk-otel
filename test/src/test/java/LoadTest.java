@@ -20,13 +20,16 @@ public class LoadTest {
             long id = ids.get(counter % ids.size());
             System.out.println(sendRequest(id));
             counter++;
-            Thread.sleep(1000);
+            Thread.sleep(100);
         }
     }
 
     private String sendRequest(long id) {
+        long start = System.currentTimeMillis();
         String url = id == -1 ? "http://localhost:8080/books" : String.format("http://localhost:8080/books/%d", id);
-        return template.exchange(url, HttpMethod.GET, null, String.class).getBody();
+        String result = template.exchange(url, HttpMethod.GET, null, String.class).getBody();
+        System.out.println(System.currentTimeMillis() - start);
+        return result;
     }
 
     private List<Long> prepareIds() throws IOException {
