@@ -6,3 +6,7 @@ shopsClient:
 
 booksClient:
   baseUrl: http://books-service:8081
+
+otel:
+  service:
+    name: api-service
