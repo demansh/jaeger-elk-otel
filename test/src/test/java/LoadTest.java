@@ -20,7 +20,7 @@ public class LoadTest {
             long id = ids.get(counter % ids.size());
             System.out.println(sendRequest(id));
             counter++;
-            Thread.sleep(100);
+            Thread.sleep(250);
         }
     }
 

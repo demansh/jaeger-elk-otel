@@ -1,5 +1,6 @@
 package com.github.demansh.api;
 
+import com.github.demansh.aspects.WithSpan;
 import com.github.demansh.entities.Book;
 import com.github.demansh.entities.BookAggregate;
 import com.github.demansh.entities.Shop;
@@ -23,6 +24,7 @@ public class ApiGateway {
         this.shopsService = shopsService;
     }
 
+    @WithSpan
     @GetMapping(path = "books/{id}")
     public BookAggregate getBook(@PathVariable("id") long bookId) {
         Book book = booksService.getBook(bookId);
@@ -30,6 +32,7 @@ public class ApiGateway {
         return new BookAggregate(book, shops);
     }
 
+    @WithSpan
     @GetMapping(path = "books")
     public Collection<BookAggregate> getAllBooks() {
         return booksService.getAllBooks().stream()
